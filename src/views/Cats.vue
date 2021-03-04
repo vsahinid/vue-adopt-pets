@@ -1,18 +1,21 @@
 <template>
     <div>
         <h1>Cats for Adoption</h1>
-       <b-table striped hover :items="cats" /> Cats
+       <b-table striped hover :items="cats" />
     </div>
 </template>
 
 <script>
-import cats from '../data/cats';
+import { mapState } from 'vuex'
 
 export default {
     data(){
-        return {
-            cats
-        }
-    }
+        return {}
+    },
+    computed: {
+    ...mapState([
+      'cats'
+    ])
+  }
 }
 </script>
